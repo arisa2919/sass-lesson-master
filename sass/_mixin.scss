@@ -1,0 +1,15 @@
+
+
+@mixin edge-frame($backgroundColor) {
+  width: 400px;
+  height: 100px;
+  background-color: $backgroundColor;
+}
+
+@mixin roop($boxColors) {
+  @for $i from 1 through length($boxColors) {
+    &__box:nth-child(#{$i}) {
+      background-color: nth($boxColors, $i);
+    }
+  }
+}
