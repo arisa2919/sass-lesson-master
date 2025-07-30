@@ -1,0 +1,16 @@
+
+
+@mixin edge-frame($backgroundColor) {
+  width: 400px;
+  height: 100px;
+  background-color: $backgroundColor;
+}
+
+@mixin roop($boxColors) {
+  @each $color in $boxColors {
+    $index: index($boxColors, $color);
+    &__box:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+}
