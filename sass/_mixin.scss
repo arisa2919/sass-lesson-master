@@ -7,9 +7,10 @@
 }
 
 @mixin roop($boxColors) {
-  @for $i from 1 through length($boxColors) {
-    &__box:nth-child(#{$i}) {
-      background-color: nth($boxColors, $i);
+  @each $color in $boxColors {
+    $index: index($boxColors, $color);
+    &__box:nth-child(#{$index}) {
+      background-color: $color;
     }
   }
 }
